@@ -168,7 +168,7 @@ class DayCell extends StatelessWidget {
             '+${events.length - maxEventDots}',
             style: TextStyle(
               fontSize: 8,
-              color: theme.dayTextColor.withOpacity(0.6),
+              color: theme.dayTextColor.withValues(alpha: 0.6),
               fontWeight: FontWeight.w500,
             ),
           ),
@@ -205,7 +205,7 @@ class DayCell extends StatelessWidget {
             '+${events.length - maxVisibleEvents}',
             style: TextStyle(
               fontSize: 9,
-              color: theme.dayTextColor.withOpacity(0.6),
+              color: theme.dayTextColor.withValues(alpha: 0.6),
               fontWeight: FontWeight.w500,
             ),
           ),

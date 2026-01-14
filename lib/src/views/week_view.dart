@@ -13,13 +13,13 @@ class WeekView extends StatefulWidget {
   final Function(CalendarEvent)? onEventTap;
 
   const WeekView({
-    Key? key,
+    super.key,
     required this.controller,
     required this.config,
     required this.theme,
     this.onDaySelected,
     this.onEventTap,
-  }) : super(key: key);
+  });
 
   @override
   State<WeekView> createState() => _WeekViewState();
@@ -296,10 +296,11 @@ class _WeekViewState extends State<WeekView> {
     return Container(
       decoration: BoxDecoration(
         color: isHoliday && widget.config.showHolidays
-            ? widget.theme.holidayBackgroundColor.withOpacity(0.1)
+            ? widget.theme.holidayBackgroundColor.withValues(alpha: 0.1)
             : null,
         border: Border(
-          right: BorderSide(color: widget.theme.borderColor.withOpacity(0.3)),
+          right: BorderSide(
+              color: widget.theme.borderColor.withValues(alpha: 0.3)),
         ),
       ),
       child: Stack(
@@ -312,7 +313,7 @@ class _WeekViewState extends State<WeekView> {
                 decoration: BoxDecoration(
                   border: Border(
                     bottom: BorderSide(
-                      color: widget.theme.borderColor.withOpacity(0.2),
+                      color: widget.theme.borderColor.withValues(alpha: 0.2),
                     ),
                   ),
                 ),
@@ -374,7 +375,7 @@ class _WeekViewState extends State<WeekView> {
           padding: const EdgeInsets.symmetric(
               horizontal: 4, vertical: 2), // ✅ Reduced padding
           decoration: BoxDecoration(
-            color: event.color.withOpacity(0.8),
+            color: event.color.withValues(alpha: 0.8),
             borderRadius: BorderRadius.circular(4),
             border: Border.all(color: event.color, width: 1),
           ),
@@ -401,7 +402,8 @@ class _WeekViewState extends State<WeekView> {
                   child: Text(
                     '${_formatEventTime(event.startDate)} - ${_formatEventTime(event.endDate)}',
                     style: TextStyle(
-                      color: (event.textColor ?? Colors.white).withOpacity(0.8),
+                      color: (event.textColor ?? Colors.white)
+                          .withValues(alpha: 0.8),
                       fontSize: 9,
                     ),
                     maxLines: 1,

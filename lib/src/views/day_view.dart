@@ -13,13 +13,13 @@ class DayView extends StatelessWidget {
   final Function(DateTime)? onTimeSlotTap;
 
   const DayView({
-    Key? key,
+    super.key,
     required this.controller,
     required this.config,
     required this.theme,
     this.onEventTap,
     this.onTimeSlotTap,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -51,7 +51,7 @@ class DayView extends StatelessWidget {
                 '${events.length} events',
                 style: TextStyle(
                   fontSize: 14,
-                  color: theme.headerTextColor.withOpacity(0.7),
+                  color: theme.headerTextColor.withValues(alpha: 0.7),
                 ),
               ),
             ],
@@ -69,8 +69,8 @@ class DayView extends StatelessWidget {
 
   Widget _buildTimeSlots(List<CalendarEvent> events) {
     const hourHeight = 60.0;
-    final startHour = 6; // 6 AM start
-    final endHour = 22; // 10 PM end
+    const startHour = 6; // 6 AM start
+    const endHour = 22; // 10 PM end
 
     return SizedBox(
       height: (endHour - startHour) * hourHeight,
@@ -97,7 +97,7 @@ class DayView extends StatelessWidget {
       decoration: BoxDecoration(
         border: Border(
           bottom: BorderSide(
-            color: theme.borderColor.withOpacity(0.3),
+            color: theme.borderColor.withValues(alpha: 0.3),
             width: 0.5,
           ),
         ),
@@ -137,7 +137,7 @@ class DayView extends StatelessWidget {
                 decoration: BoxDecoration(
                   border: Border(
                     left: BorderSide(
-                      color: theme.borderColor.withOpacity(0.3),
+                      color: theme.borderColor.withValues(alpha: 0.3),
                       width: 0.5,
                     ),
                   ),
@@ -183,7 +183,7 @@ class DayView extends StatelessWidget {
             borderRadius: BorderRadius.circular(4),
             boxShadow: [
               BoxShadow(
-                color: Colors.black.withOpacity(0.1),
+                color: Colors.black.withValues(alpha: 0.1),
                 blurRadius: 2,
                 offset: const Offset(0, 1),
               ),
@@ -219,7 +219,7 @@ class DayView extends StatelessWidget {
                       '${_formatTime(startTime)} - ${_formatTime(endTime)}',
                       style: TextStyle(
                         color: (event.textColor ?? _getTextColor(event.color))
-                            .withOpacity(0.8),
+                            .withValues(alpha: 0.8),
                         fontSize: 10, // ✅ Smaller font
                       ),
                       maxLines: 1,
@@ -235,7 +235,7 @@ class DayView extends StatelessWidget {
                       event.description!,
                       style: TextStyle(
                         color: (event.textColor ?? _getTextColor(event.color))
-                            .withOpacity(0.7),
+                            .withValues(alpha: 0.7),
                         fontSize: 9, // ✅ Even smaller font
                       ),
                       maxLines: 1,
@@ -253,7 +253,7 @@ class DayView extends StatelessWidget {
                           Icons.location_on,
                           size: 8,
                           color: (event.textColor ?? _getTextColor(event.color))
-                              .withOpacity(0.6),
+                              .withValues(alpha: 0.6),
                         ),
                         const SizedBox(width: 2),
                         Expanded(
@@ -262,7 +262,7 @@ class DayView extends StatelessWidget {
                             style: TextStyle(
                               color: (event.textColor ??
                                       _getTextColor(event.color))
-                                  .withOpacity(0.6),
+                                  .withValues(alpha: 0.6),
                               fontSize: 8,
                             ),
                             maxLines: 1,

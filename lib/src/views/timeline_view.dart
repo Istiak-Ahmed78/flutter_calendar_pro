@@ -13,14 +13,14 @@ class TimelineView extends StatefulWidget {
   final List<String> columns;
 
   const TimelineView({
-    Key? key,
+    super.key,
     required this.controller,
     required this.config,
     required this.theme,
     this.onEventTap,
     this.onTimeSlotTap,
     this.columns = const ['Room #1', 'Room #2', 'Room #3', 'Room #4'],
-  }) : super(key: key);
+  });
 
   @override
   State<TimelineView> createState() => _TimelineViewState();
@@ -143,7 +143,7 @@ class _TimelineViewState extends State<TimelineView> {
           decoration: BoxDecoration(
             border: Border(
               bottom: BorderSide(
-                color: widget.theme.borderColor.withOpacity(0.3),
+                color: widget.theme.borderColor.withValues(alpha: 0.3),
                 width: 0.5,
               ),
             ),
@@ -208,9 +208,11 @@ class _TimelineViewState extends State<TimelineView> {
         decoration: BoxDecoration(
           border: Border(
             left: BorderSide(
-                color: widget.theme.borderColor.withOpacity(0.3), width: 0.5),
+                color: widget.theme.borderColor.withValues(alpha: 0.3),
+                width: 0.5),
             bottom: BorderSide(
-                color: widget.theme.borderColor.withOpacity(0.3), width: 0.5),
+                color: widget.theme.borderColor.withValues(alpha: 0.3),
+                width: 0.5),
           ),
         ),
         child: events.isEmpty
@@ -224,7 +226,7 @@ class _TimelineViewState extends State<TimelineView> {
                         onTap: () => widget.onEventTap?.call(event),
                         child: Container(
                           decoration: BoxDecoration(
-                            color: event.color.withOpacity(0.8),
+                            color: event.color.withValues(alpha: 0.8),
                             borderRadius: BorderRadius.circular(4),
                           ),
                           padding: const EdgeInsets.all(4),
@@ -254,7 +256,7 @@ class _TimelineViewState extends State<TimelineView> {
                                     style: TextStyle(
                                       color: (event.textColor ??
                                               _getTextColor(event.color))
-                                          .withOpacity(0.8),
+                                          .withValues(alpha: 0.8),
                                       fontSize: 9,
                                     ),
                                   ),

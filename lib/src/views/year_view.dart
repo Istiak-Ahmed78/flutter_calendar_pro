@@ -12,12 +12,12 @@ class YearView extends StatelessWidget {
   final Function(DateTime)? onMonthTap;
 
   const YearView({
-    Key? key,
+    super.key,
     required this.controller,
     required this.config,
     required this.theme,
     this.onMonthTap,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -49,7 +49,7 @@ class YearView extends StatelessWidget {
       child: Container(
         decoration: BoxDecoration(
           color: isCurrentMonth
-              ? theme.selectedDayBackgroundColor.withOpacity(0.1)
+              ? theme.selectedDayBackgroundColor.withValues(alpha: 0.1)
               : theme.backgroundColor,
           border: Border.all(
             color:

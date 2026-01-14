@@ -45,7 +45,7 @@ class EventCard extends StatelessWidget {
         padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
         decoration: BoxDecoration(
           // ignore: deprecated_member_use
-          color: event.color.withOpacity(0.2),
+          color: event.color.withValues(alpha: 0.2),
           borderRadius: BorderRadius.circular(4),
           border: Border(
             left: BorderSide(
@@ -82,7 +82,7 @@ class EventCard extends StatelessWidget {
                 _formatTime(event.startDate),
                 style: TextStyle(
                   fontSize: 10,
-                  color: event.color.withOpacity(0.7),
+                  color: event.color.withValues(alpha: 0.7),
                 ),
               ),
             ],
@@ -101,10 +101,10 @@ class EventCard extends StatelessWidget {
         margin: const EdgeInsets.symmetric(vertical: 2, horizontal: 4),
         padding: const EdgeInsets.all(8),
         decoration: BoxDecoration(
-          color: event.color.withOpacity(0.1),
+          color: event.color.withValues(alpha: 0.1),
           borderRadius: BorderRadius.circular(theme.borderRadius),
           border: Border.all(
-            color: event.color.withOpacity(0.3),
+            color: event.color.withValues(alpha: 0.3),
             width: 1,
           ),
         ),
@@ -140,7 +140,7 @@ class EventCard extends StatelessWidget {
                     padding:
                         const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
                     decoration: BoxDecoration(
-                      color: Colors.red.withOpacity(0.2),
+                      color: Colors.red.withValues(alpha: 0.2),
                       borderRadius: BorderRadius.circular(4),
                     ),
                     child: const Text(
@@ -163,14 +163,14 @@ class EventCard extends StatelessWidget {
                   Icon(
                     Icons.access_time,
                     size: 12,
-                    color: event.color.withOpacity(0.7),
+                    color: event.color.withValues(alpha: 0.7),
                   ),
                   const SizedBox(width: 4),
                   Text(
                     '${_formatTime(event.startDate)} - ${_formatTime(event.endDate)}',
                     style: TextStyle(
                       fontSize: 12,
-                      color: event.color.withOpacity(0.8),
+                      color: event.color.withValues(alpha: 0.8),
                     ),
                   ),
                 ],
@@ -185,14 +185,14 @@ class EventCard extends StatelessWidget {
                   Icon(
                     Icons.event,
                     size: 12,
-                    color: event.color.withOpacity(0.7),
+                    color: event.color.withValues(alpha: 0.7),
                   ),
                   const SizedBox(width: 4),
                   Text(
                     'All day',
                     style: TextStyle(
                       fontSize: 12,
-                      color: event.color.withOpacity(0.8),
+                      color: event.color.withValues(alpha: 0.8),
                     ),
                   ),
                 ],
@@ -205,7 +205,7 @@ class EventCard extends StatelessWidget {
               Container(
                 padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
                 decoration: BoxDecoration(
-                  color: event.color.withOpacity(0.2),
+                  color: event.color.withValues(alpha: 0.2),
                   borderRadius: BorderRadius.circular(4),
                 ),
                 child: Text(
@@ -227,7 +227,7 @@ class EventCard extends StatelessWidget {
                   Icon(
                     Icons.location_on,
                     size: 12,
-                    color: event.color.withOpacity(0.7),
+                    color: event.color.withValues(alpha: 0.7),
                   ),
                   const SizedBox(width: 4),
                   Expanded(
@@ -235,7 +235,7 @@ class EventCard extends StatelessWidget {
                       event.location!,
                       style: TextStyle(
                         fontSize: 12,
-                        color: event.color.withOpacity(0.8),
+                        color: event.color.withValues(alpha: 0.8),
                       ),
                       maxLines: 1,
                       overflow: TextOverflow.ellipsis,
@@ -252,7 +252,7 @@ class EventCard extends StatelessWidget {
                 event.description!,
                 style: TextStyle(
                   fontSize: 11,
-                  color: event.color.withOpacity(0.7),
+                  color: event.color.withValues(alpha: 0.7),
                 ),
                 maxLines: 2,
                 overflow: TextOverflow.ellipsis,

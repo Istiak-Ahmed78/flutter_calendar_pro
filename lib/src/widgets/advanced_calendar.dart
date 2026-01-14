@@ -26,7 +26,7 @@ class AdvancedCalendar extends StatefulWidget {
   final List<String>? timelineColumns;
 
   const AdvancedCalendar({
-    Key? key,
+    super.key,
     this.controller,
     this.config,
     this.theme,
@@ -37,7 +37,7 @@ class AdvancedCalendar extends StatefulWidget {
     this.onTimeSlotTap,
     this.showHeader = true,
     this.timelineColumns,
-  }) : super(key: key);
+  });
 
   @override
   State<AdvancedCalendar> createState() => _AdvancedCalendarState();
@@ -108,11 +108,13 @@ class _AdvancedCalendarState extends State<AdvancedCalendar> {
   // ✅ NEW: Listen to vertical scroll and update visible month
   void _onVerticalScroll() {
     if (_verticalScrollController == null ||
-        !_verticalScrollController!.hasClients) return;
+        !_verticalScrollController!.hasClients) {
+      return;
+    }
 
     // Calculate which month is currently visible based on scroll position
     final scrollOffset = _verticalScrollController!.offset;
-    final approximateMonthHeight = 400.0; // Approximate height per month item
+    const approximateMonthHeight = 400.0; // Approximate height per month item
     final monthIndex = (scrollOffset / approximateMonthHeight).round();
 
     final now = DateTime.now();
@@ -179,7 +181,9 @@ class _AdvancedCalendarState extends State<AdvancedCalendar> {
   void _onControllerChanged() {
     if (_isPageChanging ||
         _config.enableVerticalScroll ||
-        _pageController == null) return;
+        _pageController == null) {
+      return;
+    }
 
     if (_controller.currentView == CalendarView.month) {
       final targetPage = _getPageForDate(_controller.focusedDay);
@@ -355,7 +359,7 @@ class _AdvancedCalendarState extends State<AdvancedCalendar> {
               padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 16),
               alignment: Alignment.centerLeft,
               decoration: BoxDecoration(
-                color: _theme.headerBackgroundColor.withOpacity(0.5),
+                color: _theme.headerBackgroundColor.withValues(alpha: 0.5),
               ),
               child: Text(
                 _formatMonthYear(displayDate),
@@ -378,7 +382,7 @@ class _AdvancedCalendarState extends State<AdvancedCalendar> {
             const SizedBox(height: 8),
             // Divider
             Divider(
-              color: _theme.borderColor.withOpacity(0.3),
+              color: _theme.borderColor.withValues(alpha: 0.3),
               thickness: 1,
               height: 1,
             ),
@@ -499,15 +503,6 @@ class _AdvancedCalendarState extends State<AdvancedCalendar> {
           onTimeSlotTap: widget.onTimeSlotTap,
           columns: widget.timelineColumns ??
               const ['Room #1', 'Room #2', 'Room #3', 'Room #4'],
-        );
-
-      default:
-        return MonthView(
-          controller: _controller,
-          config: _config,
-          theme: _theme,
-          onDaySelected: _handleDaySelected,
-          onDayLongPressed: widget.onDayLongPressed,
         );
     }
   }

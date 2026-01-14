@@ -15,14 +15,14 @@ class MonthView extends StatelessWidget {
   final DateTime? displayDate;
 
   const MonthView({
-    Key? key,
+    super.key,
     required this.controller,
     required this.config,
     required this.theme,
     this.onDaySelected,
     this.onDayLongPressed,
     this.displayDate,
-  }) : super(key: key);
+  });
 
   DateTime get _effectiveDate => displayDate ?? controller.focusedDay;
 
