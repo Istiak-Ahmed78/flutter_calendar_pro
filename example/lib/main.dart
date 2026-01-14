@@ -1003,3 +1003,4 @@ class _CalendarDemoPageState extends State<CalendarDemoPage> {
     }
   }
 }
+// End of example code
