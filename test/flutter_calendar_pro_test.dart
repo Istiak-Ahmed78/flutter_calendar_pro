@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_advanced_calendar/flutter_advanced_calendar.dart';
+import 'package:flutter_calendar_pro/flutter_calendar_pro.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {

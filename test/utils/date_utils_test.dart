@@ -1,4 +1,4 @@
-import 'package:flutter_advanced_calendar/src/core/utils/date_utils.dart'
+import 'package:flutter_calendar_pro/src/core/utils/date_utils.dart'
     as calendar_utils;
 import 'package:flutter_test/flutter_test.dart';
 
