@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:example/main.dart';
-import 'package:flutter_advanced_calendar/flutter_advanced_calendar.dart';
+import 'package:flutter_calendar_pro/flutter_calendar_pro.dart';
 
 void main() {
   group('MyApp Tests', () {

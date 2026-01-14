@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_advanced_calendar/src/core/models/calendar_config.dart';
-import 'package:flutter_advanced_calendar/src/core/models/enums.dart';
+import 'package:flutter_calendar_pro/src/core/models/calendar_config.dart';
+import 'package:flutter_calendar_pro/src/core/models/enums.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {

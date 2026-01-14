@@ -2,7 +2,7 @@
 
 A highly customizable, feature-rich calendar package for Flutter with support for events, range selection, multiple views, recurring events, and beautiful themes.
 
-[![pub package](https://img.shields.io/pub/v/flutter_advanced_calendar.svg)](https://pub.dev/packages/flutter_advanced_calendar)
+[![pub package](https://img.shields.io/pub/v/flutter_calendar_pro.svg)](https://pub.dev/packages/flutter_calendar_pro)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ## ✨ Features
@@ -38,4 +38,4 @@ Add this to your package's `pubspec.yaml` file:
 
 ```yaml
 dependencies:
-  flutter_advanced_calendar: ^1.0.0
+  flutter_calendar_pro: ^1.0.0
