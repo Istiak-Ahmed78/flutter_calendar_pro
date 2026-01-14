@@ -1,5 +1,5 @@
 /// Date utility functions for calendar operations
-library date_utils;
+library;
 
 /// Check if two dates are the same day
 bool isSameDay(DateTime a, DateTime b) =>

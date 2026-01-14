@@ -1,4 +1,4 @@
-library flutter_advanced_calendar;
+library;
 
 // Controllers
 export 'src/core/controllers/calendar_controller.dart';
