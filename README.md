@@ -14,7 +14,6 @@
 
 Powerful calendar toolkit • Effortless integration.
 
-✨ **7 View Modes** • 🎨 **Fully Customizable** • ⚡ **Production Ready**
 
 ```yaml
 dependencies:
