@@ -19,7 +19,7 @@
 
 <p>
   <a href="https://pub.dev/packages/flutter_calendar_pro">📖 Documentation</a> • 
-  <a href="./example">🚀 Examples</a>
+  <a href="https://github.com/Istiak-Ahmed78/flutter_calendar_pro/tree/main/example/lib/features">🚀 Examples</a>
 </p>
 
 </div>
@@ -53,7 +53,7 @@ Add `flutter_calendar_pro` to your `pubspec.yaml`:
 
 ```yaml
 dependencies:
-  flutter_calendar_pro: ^1.0.0
+  flutter_calendar_pro: ^1.0.3
 ```
 
 Then run:
